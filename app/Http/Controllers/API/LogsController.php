@@ -38,8 +38,8 @@ class LogsController extends Controller
         }
 
         $log = Log::create([
-            'user_id' => $request->user_id,
-            'query'=> $request->query
+            'query'=> $request['query'],
+            'user_id' => $request['user_id']
         ]);
 
         if(!$log){
