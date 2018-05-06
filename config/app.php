@@ -150,6 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \Neomerx\CorsIlluminate\Providers\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
