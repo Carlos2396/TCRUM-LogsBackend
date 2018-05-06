@@ -43,7 +43,7 @@ class LogController extends Controller
         ]);
 
         if(!$log){
-            return response(["error", ["Falló guardar registro."]], 400);
+            return response(["error", ["Failed to save log."]], 400);
         }
 
         return response($log, 201);
@@ -63,7 +63,7 @@ class LogController extends Controller
             return response($log, 200);
         }
         else{
-            return response(["error" => ["Registro no encontrado."]], 404);
+            return response(["error" => ["Log not found."]], 404);
         }
     }
 }

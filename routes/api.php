@@ -24,4 +24,8 @@ Route::group(['as' => 'api', 'namespace' => 'API'], function() {
     Route::get('logs', 'LogController@index')->name('logs');
     Route::get('logs/{id}', 'LogController@show')->name('logs.show');
     Route::post('logs', 'LogController@store')->name('logs.store');
+
+    // Counts routes
+    Route::get('counts', 'CountController@index')->name('counts');
+    Route::get('counts/{id}', 'CountController@show')->name('counts.show');
 });
