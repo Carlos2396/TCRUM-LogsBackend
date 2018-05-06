@@ -21,7 +21,7 @@ use Illuminate\Http\Request;
 Route::group(['as' => 'api', 'namespace' => 'API'], function() {
 
     // Logs routes
-    Route::get('logs', 'LogsController@index')->name('logs');
-    Route::get('logs/{log}', 'LogsController@show')->name('logs.show');
-    Route::post('logs', 'LogsController@store')->name('logs.store');
+    Route::get('logs', 'LogController@index')->name('logs');
+    Route::get('logs/{id}', 'LogController@show')->name('logs.show');
+    Route::post('logs', 'LogController@store')->name('logs.store');
 });

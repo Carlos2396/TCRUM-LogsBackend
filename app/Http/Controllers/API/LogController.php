@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Log;
 use Illuminate\Support\Facades\Validator;
 
-class LogsController extends Controller
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,7 +43,7 @@ class LogsController extends Controller
         ]);
 
         if(!$log){
-            return response(["message", "Failed to save log."], 400);
+            return response(["error", ["Falló guardar registro."]], 400);
         }
 
         return response($log, 201);
@@ -52,11 +52,18 @@ class LogsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Log  $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Log $log)
+    public function show($id)
     {   
-        return response($log, 200);
+        $log = Log::find($id);
+
+        if($log){
+            return response($log, 200);
+        }
+        else{
+            return response(["error" => ["Registro no encontrado."]], 404);
+        }
     }
 }
